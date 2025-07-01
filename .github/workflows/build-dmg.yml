@@ -34,6 +34,8 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
         files: ./coverage.xml
+    - name: Clean build directories
+      run: rm -rf dist build
     - name: Build app with PyInstaller
       run: pyinstaller --windowed --icon file_manager_icon.icns mac_file_manager_pro/file_manager.py
     - name: Create DMG
