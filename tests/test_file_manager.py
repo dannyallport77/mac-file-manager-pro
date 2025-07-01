@@ -1,9 +1,17 @@
 import os
+import sys
 import tempfile
 import shutil
 import pytest
 from PyQt5.QtWidgets import QApplication
-from mac_file_manager_pro.file_manager import FilePanel
+
+# Try package import first, fallback to sys.path manipulation
+try:
+    from mac_file_manager_pro.file_manager import FilePanel
+except ModuleNotFoundError:
+    # Fallback: add parent directory to path
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+    from mac_file_manager_pro.file_manager import FilePanel
 
 @pytest.fixture(scope="module")
 def app():
