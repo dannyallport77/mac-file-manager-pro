@@ -1,12 +1,9 @@
-import sys, os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import file_manager
-FilePanel = file_manager.FilePanel
 import os
 import tempfile
 import shutil
 import pytest
 from PyQt5.QtWidgets import QApplication
+from mac_file_manager_pro.file_manager import FilePanel
 
 @pytest.fixture(scope="module")
 def app():

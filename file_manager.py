@@ -1,1 +1,0 @@
-/Users/admin/Documents/File Manager/file_manager.py
