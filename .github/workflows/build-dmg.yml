@@ -47,7 +47,8 @@ jobs:
           mkdir -p dist-dmg
           cp -R dist/file_manager.app dist-dmg/
           ln -s /Applications dist-dmg/Applications
-          hdiutil create -volname "MAC File Manager Pro" -srcfolder dist-dmg -ov -format UDZO MAC_File_Manager_Pro.dmg
+          DMG_NAME="MAC_File_Manager_Pro.dmg"
+          hdiutil create -volname "MAC File Manager Pro" -srcfolder dist-dmg -ov -format UDZO "$DMG_NAME"
       - name: Upload DMG to Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
