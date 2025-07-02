@@ -51,3 +51,11 @@ Release notes are auto-generated for each tagged release using [Release Drafter]
 
 ## Screenshot
 ![screenshot](screenshot.png) 
+## 🔒 Security Notice
+
+**macOS Security Warning**: When first opening the app, you may see a warning that Apple could not verify the app is free of malware. This is normal for unsigned applications.
+
+**Solution**: Right-click the app in Applications folder and select "Open" to bypass this warning.
+
+For detailed installation instructions, see [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md).
+
