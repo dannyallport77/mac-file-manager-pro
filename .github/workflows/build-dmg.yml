@@ -44,11 +44,13 @@ jobs:
       run: rm -rf dist build
     - name: Build app with PyInstaller
       run: pyinstaller --windowed --name "MAC File Manager Pro" --icon file_manager_icon.icns mac_file_manager_pro/file_manager.py
-    - name: Create DMG
+    - name: Create DMG with custom background
       run: |
         mkdir -p dist-dmg
         cp -R "dist/MAC File Manager Pro.app" dist-dmg/
         ln -s /Applications dist-dmg/Applications
+        mkdir -p dist-dmg/.background
+        cp dmg_background.png dist-dmg/.background/background.png
         hdiutil create -volname "MAC File Manager Pro" -srcfolder dist-dmg -ov -format UDZO "File Manager Pro.dmg"
     - name: Upload DMG to Release
       uses: softprops/action-gh-release@v2
